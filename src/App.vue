@@ -21,9 +21,11 @@ import Main from './components/Main.vue';
 
     methods:{
       getApi(){
-        axios.get(store.apiUrl)
+        axios.get(this.store.apiUrl)
+        
         .then(result =>{
-          console.log(result.data);
+          // console.log(result.data);
+          this.store.projects = result.data;
           
         })
         .catch(error =>{

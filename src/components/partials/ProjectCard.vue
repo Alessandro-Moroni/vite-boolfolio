@@ -4,29 +4,25 @@
 
         props:{
 
-          project:{
-            
-            type: Object,
-            required: true,
-
-          }
+          propsTitle: String,
+          propsCreated_at: String,
         }
   }
 </script>
     
 <template>
-  <div class="col mb-3">
+
 
     <div class="card" style="width: 18rem;">
       <div class="card-body">
   
-        <h1 class="card-title">{{ project.title }}</h1>
-        <p class="card-text">{{ project.created_at }}</p>
+        <h1 class="card-title">{{ propsTitle }}</h1>
+        <p class="card-text">{{ propsCreated_at }}</p>
         
       </div>
     </div>
 
-  </div>
+
 </template>
 
 <style lang="scss" scoped>
