@@ -1,30 +1,25 @@
 <script>
+import ProjectCard from './partials/ProjectCard.vue';
+import {store} from '../data/store'
 import axios from 'axios';
-import { store } from './data/store';
-import Main from './components/Main.vue';
-
 
   export default {
-
+    name:'App',
     components:{
-      Main,
-     
+      ProjectCard,
     },
-
     data(){
-      return {
+      return{
         store,
-        
-      }
+        projects: []
+      };
     },
-
 
     methods:{
       getApi(){
         axios.get(store.apiUrl)
         .then(result =>{
-          console.log(result.data);
-          
+          this.projects = result.data;
         })
         .catch(error =>{
           console.log(error.data);
@@ -42,10 +37,15 @@ import Main from './components/Main.vue';
 </script>
 
 
-
 <template>
- 
-  <Main />
+  <div class="text-center my-5 container">
+
+
+    <div class="row row-cols-3 mt-4" >
+      <ProjectCard :project="project" v-for="project in projects" :key="project.id"  />
+
+    </div>
+  </div>
 </template>
 
 
