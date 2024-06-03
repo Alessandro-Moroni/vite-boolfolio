@@ -1,28 +1,45 @@
 <script>
 import Header from './components/Header.vue';
+import Main from './components/Main.vue';
+import axios from 'axios';
+import { store } from './data/store';
 
 
   export default {
 
     components:{
       Header,
-     
+      Main,
     },
 
     data(){
       return {
-        
+        store,
         
       }
     },
 
 
     methods:{
-      
+      getApi(){
+        axios.get(this.store.apiUrl)
+        
+        .then(result =>{
+          // console.log(result.data);
+          this.store.projects = result.data;
+          
+        })
+        .catch(error =>{
+          console.log(error.data);
+          this.error = error.message
+
+        })
+      }
 
     },
 
     mounted(){
+      this.getApi();
 
     },
   }
@@ -37,8 +54,10 @@ import Header from './components/Header.vue';
   <div class="container">
 
     <router-view></router-view>
-    
+
   </div>
+
+  <Main />
 
 </template>
 

@@ -20,7 +20,7 @@
         <ul>
           <li><router-link :to="{name: 'home'}">Home</router-link></li>
           <li><router-link :to="{name: 'about'}">About</router-link></li>
-          <li><router-link :to="{name: 'blog'}">Blog</router-link></li>
+          <li><router-link :to="{name: 'blog'}">Projects</router-link></li>
           <li><router-link :to="{name: 'contacts'}">Contacts</router-link></li>
         </ul>
       </nav>
@@ -48,6 +48,11 @@ header{
       a{
         text-decoration: none;
         color: blue;
+
+        &.active{
+          color: red;
+          
+        }
       }
     }
   }

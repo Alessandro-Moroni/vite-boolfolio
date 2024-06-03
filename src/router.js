@@ -2,13 +2,14 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import Home from './pages/Home.vue';
 import Contacts from './pages/Contacts.vue';
-import Blog from './pages/Blog.vue';
+import Projects from './pages/Projects.vue';
 import About from './pages/About.vue';
 import Error404 from './pages/Error404.vue';
 
 const router = createRouter({
 
   history: createWebHistory(),
+  linkExactActiveClass: 'active',
 
   routes:[
     {
@@ -22,9 +23,9 @@ const router = createRouter({
       component: Contacts,
     },
     {
-      path: '/Blog',
+      path: '/Projects',
       name: 'blog',
-      component: Blog,
+      component: Projects,
     },
     {
       path: '/About',
