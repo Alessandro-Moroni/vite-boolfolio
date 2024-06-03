@@ -1,43 +1,28 @@
 <script>
-import axios from 'axios';
-import { store } from './data/store';
-import Main from './components/Main.vue';
+import Header from './components/Header.vue';
 
 
   export default {
 
     components:{
-      Main,
+      Header,
      
     },
 
     data(){
       return {
-        store,
+        
         
       }
     },
 
 
     methods:{
-      getApi(){
-        axios.get(this.store.apiUrl)
-        
-        .then(result =>{
-          // console.log(result.data);
-          this.store.projects = result.data;
-          
-        })
-        .catch(error =>{
-          console.log(error.data);
-
-        })
-      }
+      
 
     },
 
     mounted(){
-      this.getApi();
 
     },
   }
@@ -46,8 +31,15 @@ import Main from './components/Main.vue';
 
 
 <template>
- 
-  <Main />
+
+  <Header />
+  
+  <div class="container">
+
+    <router-view></router-view>
+    
+  </div>
+
 </template>
 
 
@@ -55,3 +47,12 @@ import Main from './components/Main.vue';
 <style lang="scss" scoped>
 
 </style>
+
+
+<!-- npm install vue-router@4 -->
+
+<!-- import { createRouter, createWebHistory } from 'vue-router'; -->
+
+<!-- path: '/:pathMatch(.*)*', -->
+
+<!-- <router-view></router-view> -->

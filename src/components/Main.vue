@@ -26,12 +26,10 @@ import {store} from '../data/store'
 
 
     <div class="row row-cols-3 mt-4" >
+    
 
-      <div class="col mb-3" v-for="project in store.projects" :key="project.id"  >
-
-        <ProjectCard :propsTitle="project.title" :propsCreated_at="project.created_at"/>
+      <ProjectCard v-for="project in store.projects" :key="project.id"  :project="project" />
         
-      </div>
 
     </div>
   </div>
