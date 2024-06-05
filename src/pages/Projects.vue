@@ -96,7 +96,7 @@ import Loader from '../components/partials/Loader.vue';
             <div class="card " style="width: 18rem;">
               <div class="card-body">
           
-                <h1 class="card-title">{{ project.title }}</h1>
+                <h3 class="card-title"><router-link :to="{ name: 'projectDetail', params:{slug: project.slug}}" >{{ project.title }}</router-link></h3>
                 <p class="card-text">{{ project.created_at }}</p>
                 
               </div>
@@ -120,5 +120,17 @@ import Loader from '../components/partials/Loader.vue';
 </template>
 
 <style lang="scss" scoped>
+.card{
 
+  h3{
+  
+    a{
+      color: orange;
+      text-decoration: none;
+      &:hover{
+        color: #ffd000;
+      }
+    }
+  }
+}
 </style>

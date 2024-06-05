@@ -22,7 +22,7 @@ import { store } from './data/store';
 
     methods:{
       getApi(){
-        axios.get(this.store.apiUrl)
+        axios.get(this.store.apiUrl + 'projects')
         
         .then(result =>{
           // console.log(result.data);
